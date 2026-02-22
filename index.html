@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Black Wellness Project LA</title>
+  <meta name="description" content="Black Wellness Project LA is a physician-led community initiative advancing Black health through education, connection, and care." />
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --card:#12141a;
+      --text:#f2f4f8;
+      --muted:#b9c0cc;
+      --line:#242a36;
+      --accent:#0f8f4f;
+      --accent2:#0b6a3a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max: 1080px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(15,143,79,.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(255,255,255,.06), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(180%) blur(12px);
+      background:rgba(11,12,15,.65);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(135deg, var(--accent), rgba(15,143,79,.35));
+      display:grid; place-items:center;
+      box-shadow:0 6px 18px rgba(15,143,79,.25);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+    }
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+    }
+    nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+      padding:10px 10px;
+      border-radius:12px;
+    }
+    nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .btn{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:14px;
+      font-weight:700;
+      font-size:14px;
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn:hover{background:rgba(255,255,255,.07)}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: rgba(15,143,79,.35);
+      box-shadow:0 10px 24px rgba(15,143,79,.25);
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
+    .hero{
+      padding:54px 0 24px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-main{
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-main:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(500px 260px at 20% 20%, rgba(15,143,79,.28), transparent 70%);
+      pointer-events:none;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+    }
+    .sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+      max-width:60ch;
+    }
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 22px}
+    .pill{
+      font-size:12px;
+      color:rgba(242,244,248,.92);
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      padding:7px 10px;
+      border-radius:999px;
+    }
+    .hero-side{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .side-title{font-weight:800; letter-spacing:.2px}
+    .side-text{color:var(--muted); font-size:14px; margin:6px 0 0}
+    .mini{
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(18,20,26,.65);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      margin:18px 0 0;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+    .section{padding:26px 0}
+    .section h2{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    .section p{margin:0; color:var(--muted)}
+    .feature{
+      padding:18px;
+      background:rgba(18,20,26,.6);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+    }
+    .feature h3{margin:0 0 8px; font-size:16px}
+    .feature p{margin:0; font-size:14px; color:var(--muted)}
+    .kpi{
+      display:flex; gap:12px; flex-wrap:wrap; margin-top:14px
+    }
+    .kpi .stat{
+      flex:1 1 160px;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+    }
+    .stat .num{font-weight:900; font-size:20px}
+    .stat .lab{color:var(--muted); font-size:13px; margin-top:4px}
+    form{
+      display:grid; gap:12px;
+      margin-top:14px;
+    }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(18,20,26,.6);
+      color:var(--text);
+      font-size:14px;
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, textarea:focus{border-color: rgba(15,143,79,.55)}
+    .note{font-size:12px; color:rgba(185,192,204,.95)}
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      margin-top:26px;
+      padding:22px 0 36px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footergrid{
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .smalllinks a{color:var(--muted); text-decoration:none; margin-right:12px}
+    .smalllinks a:hover{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <div class="logo">BW</div>
+        <div>Black Wellness Project LA</div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#mission">Mission</a></li>
+          <li><a href="#whatwedo">What we do</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <a class="btn" href="#support">Donate</a>
+        <a class="btn primary" href="#contact">Get involved</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="hero-grid">
+        <section class="card hero-main">
+          <h1>Advancing Black Health Through Community, Care, and Future Physicians</h1>
+          <p class="sub">
+            Black Wellness Project LA is a physician-led community initiative focused on building access, trust, and continuity in Black health.
+            We partner with local organizations to deliver health education, navigation support, and community events.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Los Angeles</span>
+            <span class="pill">Community health</span>
+            <span class="pill">Future physician-led</span>
+            <span class="pill">Prevention and navigation</span>
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="#events">See upcoming events</a>
+            <a class="btn" href="#support">Support the work</a>
+          </div>
+
+          <div class="kpi" aria-label="Highlights">
+            <div class="stat">
+              <div class="num">2026</div>
+              <div class="lab">Launch year (ongoing initiative)</div>
+            </div>
+            <div class="stat">
+              <div class="num">LA-based</div>
+              <div class="lab">Community-centered partnerships</div>
+            </div>
+            <div class="stat">
+              <div class="num">Student-run</div>
+              <div class="lab">Guided by physician mentors</div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="card hero-side">
+          <div class="mini">
+            <div class="side-title">What we believe</div>
+            <p class="side-text">Health equity is built through relationships, culturally responsive care, and sustained presence in the community.</p>
+          </div>
+          <div class="mini">
+            <div class="side-title">What you can do today</div>
+            <p class="side-text">
+              Share our site, follow along for event updates, or reach out to partner.
+              Donations will support materials, screenings, and community programming.
+            </p>
+          </div>
+          <div class="mini">
+            <div class="side-title">Contact</div>
+            <p class="side-text">
+              Email: <a href="mailto:blackwellnessprojectla@gmail.com">blackwellnessprojectla@gmail.com</a><br />
+              Location: Los Angeles, CA
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="wrap section" id="mission">
+      <h2>Mission</h2>
+      <p>
+        To advance Black health in Los Angeles by connecting community members to education, resources, and care, while building a future physician workforce grounded in service, trust, and accountability.
+      </p>
+    </div>
+
+    <div class="wrap section" id="whatwedo">
+      <h2>What we do</h2>
+      <div class="grid">
+        <div class="feature">
+          <h3>Community health events</h3>
+          <p>Pop-ups and fairs focused on prevention, screenings, and practical health navigation.</p>
+        </div>
+        <div class="feature">
+          <h3>Health education</h3>
+          <p>Short, accessible content that meets people where they are, online and in person.</p>
+        </div>
+        <div class="feature">
+          <h3>Resource navigation</h3>
+          <p>Guidance on connecting with clinics, insurance resources, and follow-up care.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap section" id="events">
+      <h2>Events</h2>
+      <p>
+        Upcoming events will be posted here. For now, use the contact form below to partner or to be notified about the next community event.
+      </p>
+      <div class="grid" style="margin-top:14px">
+        <div class="feature">
+          <h3>Next community event</h3>
+          <p><strong>Date:</strong> To be announced<br /><strong>Location:</strong> Los Angeles, CA<br /><strong>Focus:</strong> Community wellness and prevention</p>
+        </div>
+        <div class="feature">
+          <h3>Volunteer roles</h3>
+          <p>Set-up, check-in, education table support, navigation support, and outreach.</p>
+        </div>
+        <div class="feature">
+          <h3>Partner with us</h3>
+          <p>Clinics, local nonprofits, sponsors, and student organizations are welcome.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap section" id="support">
+      <h2>Support the work</h2>
+      <p>
+        Donations will be used for community programming, materials, and event logistics. A formal donation link will be added once payment processing is set up.
+      </p>
+      <div class="kpi">
+        <div class="stat">
+          <div class="num">In-kind support</div>
+          <div class="lab">Supplies, space, food, printing</div>
+        </div>
+        <div class="stat">
+          <div class="num">Sponsors</div>
+          <div class="lab">Local businesses and organizations</div>
+        </div>
+        <div class="stat">
+          <div class="num">Visibility</div>
+          <div class="lab">Share the mission and events</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap section" id="contact">
+      <h2>Contact</h2>
+      <p>Use this form to volunteer, partner, or receive updates. This sends an email using your visitor’s email app.</p>
+
+      <form action="mailto:blackwellnessprojectla@gmail.com" method="post" enctype="text/plain">
+        <input name="Name" placeholder="Your name" required />
+        <input name="Email" type="email" placeholder="Your email" required />
+        <textarea name="Message" placeholder="How can we connect?" required></textarea>
+        <button class="btn primary" type="submit">Send message</button>
+        <div class="note">
+          If the button does not work in your browser, email us directly at
+          <a href="mailto:blackwellnessprojectla@gmail.com">blackwellnessprojectla@gmail.com</a>.
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <div class="wrap footergrid">
+        <div>
+          <strong style="color:var(--text)">Black Wellness Project LA</strong><br />
+          Los Angeles, CA<br />
+          <a href="mailto:blackwellnessprojectla@gmail.com">blackwellnessprojectla@gmail.com</a>
+        </div>
+        <div class="smalllinks">
+          <div style="margin-bottom:6px; color:var(--text); font-weight:700">Quick links</div>
+          <a href="#mission">Mission</a>
+          <a href="#events">Events</a>
+          <a href="#support">Support</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="wrap" style="margin-top:14px">
+        © <span id="yr"></span> Black Wellness Project LA. All rights reserved.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
