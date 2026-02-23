@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Black Wellness Project LA</title>
+  <meta name="description" content="Upcoming events and programming from Black Wellness Project LA in Los Angeles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .events-page-list { max-width: 800px; margin: 0 auto; }
+    .event-full { background: var(--cream); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 32px; }
+    .event-full-header { padding: 32px 40px; display: flex; align-items: flex-start; gap: 24px; }
+    .event-full-badge { background: var(--green-dark); color: white; padding: 14px 18px; border-radius: 10px; text-align: center; flex-shrink: 0; min-width: 72px; }
+    .event-full-badge .mo { font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+    .event-full-badge .yr { font-size: 0.72rem; opacity: 0.65; margin-top: 4px; display: block; }
+    .event-full-title { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+    .event-full-loc { font-size: 0.85rem; color: var(--gray); margin-bottom: 12px; }
+    .event-full-body { padding: 0 40px 36px; }
+    .event-full-body p { font-size: 0.95rem; color: var(--gray); line-height: 1.75; margin-bottom: 16px; }
+    .event-full-body ul { padding-left: 0; }
+    .event-full-body li { font-size: 0.92rem; color: var(--gray); line-height: 1.65; padding: 4px 0 4px 20px; position: relative; }
+    .event-full-body li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+    .event-tag-large { display: inline-block; padding: 6px 16px; border-radius: 50px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--green-dark); color: white; margin-bottom: 12px; }
+    .event-tag-flagship { background: var(--gold); color: var(--black); }
+    .past-section { margin-top: 64px; padding-top: 64px; border-top: 1px solid rgba(0,0,0,0.08); }
+    .past-section h2 { font-family: var(--font-serif); font-size: 2rem; color: var(--black); margin-bottom: 8px; }
+    .past-section p { color: var(--gray); font-size: 0.95rem; margin-bottom: 32px; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bwp" style="color:var(--green-dark)">BWP</span><span class="logo-la" style="color:var(--gray)">&thinsp;—&thinsp;LA</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span style="background:var(--black)"></span><span style="background:var(--black)"></span><span style="background:var(--black)"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="what-we-do.html">What We Do</a></li>
+        <li><a href="events.html" style="color:var(--green-dark); font-weight:600">Events</a></li>
+        <li><a href="support.html">Support Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="support.html" class="nav-cta">Get Involved</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero-label">Programming</span>
+      <h1 class="page-hero-title">Events &amp; Initiatives</h1>
+      <p class="page-hero-sub">Our 2026 programming is built around what we hear directly from the community. All events are free and open to the public.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="events-page-list">
+
+        <!-- HOW TO ADD AN EVENT:
+             Copy one of the event-full blocks below, paste it above or below the others,
+             and update the month, year, title, location, description, and bullet points.
+             Change the event-tag-large class to event-tag-flagship if it's a major event. -->
+
+        <div class="event-full">
+          <div class="event-full-header">
+            <div class="event-full-badge">
+              <span class="mo">MAR</span>
+              <span class="yr">2026</span>
+            </div>
+            <div>
+              <span class="event-tag-large">Free Event</span>
+              <h2 class="event-full-title">Community Listening Sessions</h2>
+              <p class="event-full-loc">📍 Baldwin Village Area, Los Angeles &nbsp;|&nbsp; Dates to be announced</p>
+            </div>
+          </div>
+          <div class="event-full-body">
+            <p>Before we plan, we listen. Our community listening sessions bring us into direct, unhurried conversation with Black residents of Los Angeles to understand health needs, barriers, and priorities from the people who know them best.</p>
+            <p>Sessions are small, facilitated, and designed to be comfortable and accessible. No medical knowledge required — just your voice and your experience.</p>
+            <ul>
+              <li>Small group format with trained student facilitators</li>
+              <li>Open to all residents of the Baldwin Village area</li>
+              <li>Childcare and light refreshments provided</li>
+              <li>Accessible venue — transportation support available</li>
+              <li>Your input directly shapes our 2026 health fair programming</li>
+            </ul>
+            <div style="margin-top: 24px;">
+              <a href="contact.html" class="btn btn-primary">Get Notified When Dates Are Set</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-full">
+          <div class="event-full-header">
+            <div class="event-full-badge">
+              <span class="mo">APR</span>
+              <span class="yr">2026</span>
+            </div>
+            <div>
+              <span class="event-tag-large">Free Event</span>
+              <h2 class="event-full-title">Health Education Workshops</h2>
+              <p class="event-full-loc">📍 Los Angeles, CA &nbsp;|&nbsp; Dates to be announced</p>
+            </div>
+          </div>
+          <div class="event-full-body">
+            <p>Our health education workshops are designed in direct response to what community members tell us they want to learn. We don&rsquo;t show up with a predetermined curriculum — we listen first, then build together.</p>
+            <p>Workshops are interactive, accessible, and led by medical students and community educators who reflect the communities we serve.</p>
+            <ul>
+              <li>Topics chosen based on community listening session findings</li>
+              <li>Interactive, not lecture-based</li>
+              <li>Resource handouts and take-home tools provided</li>
+              <li>Light refreshments and welcoming space</li>
+              <li>Minimum of 2 workshops planned for Spring 2026</li>
+            </ul>
+            <div style="margin-top: 24px;">
+              <a href="contact.html" class="btn btn-primary">Stay in the Loop</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-full" style="background: var(--green-light); border-color: rgba(27,77,62,0.15)">
+          <div class="event-full-header">
+            <div class="event-full-badge">
+              <span class="mo">AUG</span>
+              <span class="yr">2026</span>
+            </div>
+            <div>
+              <span class="event-tag-large event-tag-flagship">Flagship Event</span>
+              <h2 class="event-full-title">Annual Community Health Fair</h2>
+              <p class="event-full-loc">📍 Greater Baldwin Village, Los Angeles &nbsp;|&nbsp; Mid-August 2026 &nbsp;|&nbsp; Full day event</p>
+            </div>
+          </div>
+          <div class="event-full-body">
+            <p>Our flagship event returns. The Annual Community Health Fair is a full-day celebration of health, community, and care — built on our Mind, Body &amp; Soul framework and shaped by everything we learn from the community throughout the year.</p>
+            <p>All services are completely free. All are welcome. This is for our community, built by people who come from it.</p>
+            <ul>
+              <li>Free health screenings: blood pressure, blood glucose, oral cancer, PSA, STI/HIV testing, and more</li>
+              <li>Wellness activities: yoga, sound bath, healing circles, massage</li>
+              <li>Social needs assessments and resource navigation</li>
+              <li>Kids&rsquo; corner with activities and photo booth</li>
+              <li>Music, food, and community celebration</li>
+              <li>Trusted community partners on-site</li>
+            </ul>
+            <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="support.html#volunteer" class="btn btn-primary">Volunteer at the Fair</a>
+              <a href="contact.html" class="btn btn-outline-dark">Partner or Sponsor</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAST EVENTS -->
+        <div class="past-section">
+          <h2>Past Events</h2>
+          <p>A look at where we&rsquo;ve been and what we&rsquo;ve built.</p>
+          <div class="event-full">
+            <div class="event-full-header">
+              <div class="event-full-badge" style="background: var(--gray)">
+                <span class="mo">2024</span>
+                <span class="yr">Past</span>
+              </div>
+              <div>
+                <span class="event-tag-large" style="background: var(--gray)">Inaugural Event</span>
+                <h2 class="event-full-title">Dr. Edith Mitchell Community Health Fair</h2>
+                <p class="event-full-loc">📍 Baldwin Village, South Los Angeles &nbsp;|&nbsp; Summer 2024</p>
+              </div>
+            </div>
+            <div class="event-full-body">
+              <p>Our inaugural event — named in honor of pioneering oncologist Dr. Edith Mitchell — served over 120 residents of Baldwin Village with free health screenings, wellness activities, social needs assessments, and community celebration.</p>
+              <ul>
+                <li>120+ residents served</li>
+                <li>100+ health screenings conducted (blood pressure, glucose, cancer, PSA, STI/HIV)</li>
+                <li>50%+ of attendees participated in at least 2 wellness activities</li>
+                <li>24 social needs assessments; 16 individuals successfully connected to resources</li>
+                <li>Partners: TRAP Medicine, UCLA Health, Elevated Hands, SOLO, and more</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div><span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:#fff">BWP</span><span style="font-family:'Inter',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.4); letter-spacing:0.08em">&thinsp;—&thinsp;LA</span></div>
+          <p class="footer-tagline">Black Wellness Project LA<br>A SoCal SNMA Initiative</p>
+        </div>
+        <div class="footer-links">
+          <a href="mission.html">Our Mission</a>
+          <a href="what-we-do.html">What We Do</a>
+          <a href="events.html">Events</a>
+          <a href="support.html">Support Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Black Wellness Project LA. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+</body>
+</html>

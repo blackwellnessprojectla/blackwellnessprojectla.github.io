@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What We Do — Black Wellness Project LA</title>
+  <meta name="description" content="How Black Wellness Project LA serves the Black community in Los Angeles through health fairs, education, and resource navigation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .program-block { padding: 72px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .program-block:last-child { border-bottom: none; }
+    .program-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .program-inner.flip { }
+    .program-icon-large { font-size: 3.5rem; margin-bottom: 20px; }
+    .program-title { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600; color: var(--black); margin-bottom: 16px; }
+    .program-body { font-size: 0.97rem; color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+    .program-visual { background: var(--green-light); border-radius: var(--radius); padding: 40px; min-height: 280px; display: flex; align-items: center; justify-content: center; }
+    .program-visual.gold { background: var(--gold-light); }
+    .program-visual p { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; color: var(--black); text-align: center; line-height: 1.5; }
+    .screenings-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .screening-pill { padding: 8px 16px; background: var(--green-dark); color: white; border-radius: 50px; font-size: 0.78rem; font-weight: 500; }
+    @media (max-width: 768px) {
+      .program-inner { grid-template-columns: 1fr; gap: 32px; }
+      .program-visual { min-height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bwp" style="color:var(--green-dark)">BWP</span><span class="logo-la" style="color:var(--gray)">&thinsp;—&thinsp;LA</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span style="background:var(--black)"></span><span style="background:var(--black)"></span><span style="background:var(--black)"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="mission.html">Our Mission</a></li>
+        <li><a href="what-we-do.html" style="color:var(--green-dark); font-weight:600">What We Do</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="support.html">Support Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="support.html" class="nav-cta">Get Involved</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero-label">Our Programming</span>
+      <h1 class="page-hero-title">What We Do</h1>
+      <p class="page-hero-sub">Every initiative we run is rooted in the Mind, Body &amp; Soul framework — a holistic approach adapted from the bio-psycho-social-spiritual model of health.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="program-block">
+        <div class="program-inner">
+          <div>
+            <div class="program-icon-large">🏥</div>
+            <h2 class="program-title">Community Health Events</h2>
+            <p class="program-body">Our health fairs are free, full-day events that bring medical screenings, wellness activities, and social support directly to South LA communities. They are designed to be joyful, welcoming, and grounded in trust — not clinical visits.</p>
+            <p class="program-body">We partner with trusted community organizations so that community members see familiar faces alongside new ones. Our goal is not just health data — it&rsquo;s building a relationship between our people and a healthcare system that has historically failed them.</p>
+            <div class="screenings-list">
+              <span class="screening-pill">Blood Pressure</span>
+              <span class="screening-pill">Blood Glucose</span>
+              <span class="screening-pill">Oral Cancer</span>
+              <span class="screening-pill">PSA Screening</span>
+              <span class="screening-pill">STI/HIV Testing</span>
+              <span class="screening-pill">Social Needs Assessment</span>
+            </div>
+          </div>
+          <div class="program-visual">
+            <p>&ldquo;Taking care of one&rsquo;s self can be a fun and empowering effort, rather than something filled with gripe.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-block">
+        <div class="program-inner">
+          <div class="program-visual gold" style="order: -1">
+            <p>We listen first. We build from what we hear.</p>
+          </div>
+          <div>
+            <div class="program-icon-large">📚</div>
+            <h2 class="program-title">Health Education</h2>
+            <p class="program-body">Our workshops are built around topics chosen by community members — not by a predetermined curriculum. We run listening sessions first, then develop programming that responds to what people actually want and need to know.</p>
+            <p class="program-body">Workshops are interactive, accessible, and facilitated by medical students and community educators who reflect the communities we serve. We bring knowledge in exchange for the knowledge communities already hold.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-block">
+        <div class="program-inner">
+          <div>
+            <div class="program-icon-large">🗺</div>
+            <h2 class="program-title">Resource Navigation</h2>
+            <p class="program-body">A health fair isn&rsquo;t enough on its own. At every event, we conduct social needs assessments that connect community members to the resources they need beyond the day itself — housing, health insurance, food access, emergency services, and more.</p>
+            <p class="program-body">In 2024, 24 social needs assessments were completed. Of the 20 individuals referred to community resources, 16 have since successfully connected. We follow up. We close the loop.</p>
+            <a href="mission.html" class="btn btn-primary" style="margin-top: 8px">See Our 2024 Impact</a>
+          </div>
+          <div class="program-visual">
+            <p>20 individuals referred. 16 successfully connected to care.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-block">
+        <div class="program-inner">
+          <div class="program-visual gold" style="order: -1">
+            <p>We build with community, not for it.</p>
+          </div>
+          <div>
+            <div class="program-icon-large">🤝</div>
+            <h2 class="program-title">Community Partnerships</h2>
+            <p class="program-body">Our partnerships are not transactional. We work alongside organizations that have existing trust in the communities we serve — because that trust takes years to build and cannot be manufactured.</p>
+            <p class="program-body">Our current partners include TRAP Medicine (which provides weekly services in Baldwin Village), UCLA Health, Charles R. Drew Medical Society, Seeing Over Large Obstacles (SOLO), and others. We are always looking to build new relationships rooted in shared values.</p>
+            <a href="support.html#partner" class="btn btn-outline-dark" style="margin-top: 8px">Become a Partner</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div><span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:#fff">BWP</span><span style="font-family:'Inter',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.4); letter-spacing:0.08em">&thinsp;—&thinsp;LA</span></div>
+          <p class="footer-tagline">Black Wellness Project LA<br>A SoCal SNMA Initiative</p>
+        </div>
+        <div class="footer-links">
+          <a href="mission.html">Our Mission</a>
+          <a href="what-we-do.html">What We Do</a>
+          <a href="events.html">Events</a>
+          <a href="support.html">Support Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Black Wellness Project LA. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  </script>
+</body>
+</html>
