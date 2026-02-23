@@ -104,18 +104,39 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
-    .hero-main{
-      padding:28px;
-      position:relative;
-      overflow:hidden;
-      background: url('hero.JPG') center/cover no-repeat;
-    }
-    .hero-main:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(500px 260px at 20% 20%, rgba(15,143,79,.28), transparent 70%);
-      pointer-events:none;
-    }
+    hero-main{
+  padding:64px 28px;
+  position:relative;
+  overflow:hidden;
+  min-height:72vh;
+  display:flex;
+  align-items:flex-end;
+  background: url('hero.JPG') center/cover no-repeat;
+}
+
+/* dark overlay for readability */
+.hero-main:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.75) 70%, rgba(0,0,0,.90) 100%),
+    radial-gradient(800px 420px at 15% 20%, rgba(15,143,79,.35), transparent 65%);
+  pointer-events:none;
+}
+
+/* keep text above overlay */
+.hero-main > *{
+  position:relative;
+  z-index:1;
+}
+
+/* improve text contrast */
+.hero-main h1,
+.hero-main .sub{
+  color:rgba(255,255,255,.95);
+  text-shadow: 0 2px 18px rgba(0,0,0,.65);
+}
     h1{
       margin:0 0 12px;
       font-size:44px;
