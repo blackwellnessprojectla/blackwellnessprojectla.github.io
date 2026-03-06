@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Community Listening Session",
+    "date": "2026-03-14",
+    "month": "MAR",
+    "day": "14",
+    "year": "2026",
+    "time": "3:00 PM – 5:00 PM",
+    "location": "Jim Gilliam Recreation Center, 4000 S La Brea Ave, Los Angeles, CA 90008",
+    "description": "As we prepare for our upcoming Black Health Fair this summer, we want to make sure it reflects your needs, concerns, and priorities. Join us to share what health issues impact you and your family, tell us what resources you wish were more accessible, and help shape the services offered at the Health Fair.",
+    "type": "free",
+    "featured": false,
+    "rsvpLink": "https://blackwellnessprojectla.org/events.html"
+  },
+  {
+    "id": 2,
+    "title": "Health Education Workshops",
+    "date": "2026-04-18",
+    "month": "APR",
+    "day": "18",
+    "year": "2026",
+    "time": "11:00 AM – 3:00 PM",
+    "location": "Los Angeles, CA",
+    "description": "Interactive workshops on health topics chosen by community members — because education is most powerful when it starts with the questions you actually have.",
+    "type": "free",
+    "featured": false,
+    "rsvpLink": "mailto:blackwellnessprojectla@gmail.com?subject=RSVP: Health Education Workshop"
+  },
+  {
+    "id": 3,
+    "title": "Annual Community Health Fair",
+    "date": "2026-08-15",
+    "month": "AUG",
+    "day": "15",
+    "year": "2026",
+    "time": "9:00 AM – 4:00 PM",
+    "location": "Greater Baldwin Village, Los Angeles",
+    "description": "Our flagship event returns. Free health screenings, wellness activities, resource navigation, and community celebration — all grounded in our Mind, Body & Soul framework.",
+    "type": "flagship",
+    "featured": true,
+    "rsvpLink": "mailto:blackwellnessprojectla@gmail.com?subject=RSVP: Annual Health Fair 2026"
+  }
+]

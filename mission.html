@@ -7,111 +7,169 @@
   <meta name="description" content="Learn about the mission, values, and story behind Black Wellness Project LA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .mission-content { max-width: 760px; margin: 0 auto; }
-    .mission-content h2 { font-family: var(--font-serif); font-size: 2rem; font-weight: 600; color: var(--black); margin: 48px 0 16px; }
-    .mission-content p { font-size: 1rem; color: var(--gray); line-height: 1.8; margin-bottom: 20px; }
-    .mission-content blockquote { border-left: 3px solid var(--gold); padding: 20px 28px; background: var(--gold-light); border-radius: 0 12px 12px 0; margin: 32px 0; font-family: var(--font-serif); font-size: 1.2rem; color: var(--black); line-height: 1.6; }
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 32px 0; }
-    .value-pill { padding: 20px 24px; background: var(--green-light); border-radius: var(--radius); }
-    .value-pill h4 { font-family: var(--font-serif); font-size: 1.15rem; color: var(--green-dark); margin-bottom: 6px; }
-    .value-pill p { font-size: 0.85rem; color: var(--gray); margin: 0; }
-    .impact-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 32px 0; }
-    .impact-box { background: var(--green-dark); color: white; padding: 24px 20px; border-radius: var(--radius); text-align: center; }
-    .impact-box .num { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 600; display: block; }
-    .impact-box .lbl { font-size: 0.78rem; opacity: 0.75; margin-top: 6px; line-height: 1.4; }
-  </style>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta property="og:image" content="assets/images/og-image.png" />
+  <meta property="og:type" content="website" />
 </head>
 <body>
 
+  <!-- ==================== NAVIGATION ==================== -->
   <nav class="nav scrolled" id="nav">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="logo-bwp" style="color:var(--green-dark)">BWP</span><span class="logo-la" style="color:var(--gray)">&thinsp;—&thinsp;LA</span>
+        <img src="assets/images/logo-nav.png" alt="BWP-LA Logo" style="height: 40px; width: auto; vertical-align: middle;">
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span style="background:var(--black)"></span><span style="background:var(--black)"></span><span style="background:var(--black)"></span>
+        <span style="background:var(--gray-900)"></span><span style="background:var(--gray-900)"></span><span style="background:var(--gray-900)"></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="mission.html" style="color:var(--green-dark); font-weight:600">Our Mission</a></li>
+        <li><a href="mission.html" class="active">Our Mission</a></li>
         <li><a href="what-we-do.html">What We Do</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="support.html">Support Us</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="support.html" class="nav-cta">Get Involved</a>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" aria-label="Twitter/X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <a href="support.html" class="nav-cta" style="background:var(--green-dark); color:var(--white); border-color:var(--green-dark)">Get Involved</a>
     </div>
   </nav>
 
+  <!-- ==================== PAGE HERO ==================== -->
   <section class="page-hero">
     <div class="container">
       <span class="page-hero-label">Who We Are</span>
       <h1 class="page-hero-title">Our Mission</h1>
-      <p class="page-hero-sub">A collective built on the belief that Black communities deserve more than access — they deserve care that sees them fully.</p>
+      <p class="page-hero-sub">A collective built on the belief that Black communities deserve more than access &mdash; they deserve care that sees them fully.</p>
     </div>
   </section>
 
+  <!-- ==================== MISSION CONTENT ==================== -->
   <section class="section">
     <div class="container">
       <div class="mission-content">
 
-        <h2>Who We Are</h2>
-        <p>Black Wellness Project LA (BWP-LA) is a collective of Black medical students from UCLA, Charles R. Drew University, and UC Irvine. We came together with a shared understanding: that our communities face not just health disparities, but barriers of access, trust, and representation within the medical system itself.</p>
-        <p>We are future physicians choosing to act now — not waiting for residency or practice to begin the work of community health. Operating as part of SoCal SNMA (Student National Medical Association), we launch health initiatives that bring care directly to the communities that need it most.</p>
-
-        <blockquote>&ldquo;We hope to organize with local residents towards stronger health outcomes by bridging the resources we are institutionally in proximity to, but are often fragmented or made inaccessible to our people.&rdquo;</blockquote>
-
-        <h2>Our Mission</h2>
-        <p>We are a collective of medical students launching a series of health initiatives dedicated to improving Black health in Los Angeles. Our goal is to connect community members, organizers, health students, and healthcare workers to build stronger pathways to care, education, and advocacy across the city.</p>
-
-        <h2>Our Values</h2>
-        <div class="values-grid">
-          <div class="value-pill">
-            <h4>Dignity</h4>
-            <p>Every community member deserves to be treated with full respect, in every interaction</p>
+        <div class="fade-in">
+          <h2>Who We Are</h2>
+          <div style="margin: 32px 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg);">
+            <img src="assets/images/gallery/team-2026-intro-meeting.jpg" alt="The 2026 BWP-LA team at their introductory meeting" style="width: 100%; height: auto; display: block;" />
           </div>
-          <div class="value-pill">
-            <h4>Self-Determination</h4>
-            <p>Community members lead; we support, not prescribe</p>
-          </div>
-          <div class="value-pill">
-            <h4>Health Justice</h4>
-            <p>We address the root causes of health disparities, not just their symptoms</p>
-          </div>
-          <div class="value-pill">
-            <h4>Inclusivity</h4>
-            <p>Our work belongs to and centers the full breadth of our community</p>
+          <p style="text-align: center; font-size: 0.9rem; color: var(--gray-500); margin-top: -16px; margin-bottom: 32px;"><em>The BWP-LA 2026 team at our introductory meeting</em></p>
+          <p>Black Wellness Project LA (BWP-LA) is a collective of Black medical students from UCLA, Charles R. Drew University, and UC Irvine. We came together with a shared understanding: that our communities face not just health disparities, but barriers of access, trust, and representation within the medical system itself.</p>
+          <p>We are future physicians choosing to act now &mdash; not waiting for residency or practice to begin the work of community health. Operating as part of SoCal SNMA (Student National Medical Association), we launch health initiatives that bring care directly to the communities that need it most.</p>
+        </div>
+
+        <div class="fade-in">
+          <blockquote>&ldquo;We hope to organize with local residents towards stronger health outcomes by bridging the resources we are institutionally in proximity to, but are often fragmented or made inaccessible to our people.&rdquo;</blockquote>
+        </div>
+
+        <div class="fade-in">
+          <h2>Our Mission</h2>
+          <p>We are a collective of medical students launching a series of health initiatives dedicated to improving Black health in Los Angeles. Our goal is to connect community members, organizers, health students, and healthcare workers to build stronger pathways to care, education, and advocacy across the city.</p>
+        </div>
+
+        <div class="fade-in">
+          <h2>Our Values</h2>
+          <div class="values-grid">
+            <div class="value-pill">
+              <h4>Dignity</h4>
+              <p>Every community member deserves to be treated with full respect, in every interaction</p>
+            </div>
+            <div class="value-pill">
+              <h4>Self-Determination</h4>
+              <p>Community members lead; we support, not prescribe</p>
+            </div>
+            <div class="value-pill">
+              <h4>Health Justice</h4>
+              <p>We address the root causes of health disparities, not just their symptoms</p>
+            </div>
+            <div class="value-pill">
+              <h4>Inclusivity</h4>
+              <p>Our work belongs to and centers the full breadth of our community</p>
+            </div>
           </div>
         </div>
 
-        <h2>The 2024 Health Fair: Where It Began</h2>
-        <p>In 2024, we held our inaugural event: the Dr. Edith Mitchell Community Health Fair in Baldwin Village, South Los Angeles. It was named in honor of Dr. Edith Mitchell, a pioneering oncologist and trailblazer for Black physicians in America.</p>
-        <p>The fair offered free health screenings — blood pressure, blood glucose, oral cancer, PSA, and STI/HIV testing — alongside yoga, a sound bath, healing circles, a DJ, kids&rsquo; activities, and social needs assessments. It was built to honor the whole person.</p>
+        <div class="fade-in">
+          <h2>The 2024 Health Fair: Where It Began</h2>
+          <p>In 2024, we held our inaugural event: the Dr. Edith Mitchell Community Health Fair in Baldwin Village, South Los Angeles. It was named in honor of Dr. Edith Mitchell, a pioneering oncologist and trailblazer for Black physicians in America.</p>
+          <p>The fair offered free health screenings &mdash; blood pressure, blood glucose, oral cancer, PSA, and STI/HIV testing &mdash; alongside yoga, a sound bath, healing circles, a DJ, kids&rsquo; activities, and social needs assessments. It was built to honor the whole person.</p>
 
-        <div class="impact-row">
-          <div class="impact-box"><span class="num">120<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Residents of Baldwin Village served</span></div>
-          <div class="impact-box"><span class="num">100<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Health screenings conducted</span></div>
-          <div class="impact-box"><span class="num">24</span><span class="lbl">Social needs assessments completed</span></div>
-          <div class="impact-box"><span class="num">16</span><span class="lbl">Connected to community resources</span></div>
+          <!-- Health Fair Photo Grid -->
+          <div style="margin: 32px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+              <img src="assets/images/gallery/dental-health-booth.jpg" alt="Medical students providing dental health education at the health fair" style="width: 100%; height: 240px; object-fit: cover; display: block;" />
+            </div>
+            <div style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+              <img src="assets/images/gallery/gold-standard-urology-doc.jpg" alt="Gold Standard Urology physician engaging with volunteers at the fair" style="width: 100%; height: 240px; object-fit: cover; display: block;" />
+            </div>
+          </div>
+          <p style="text-align: center; font-size: 0.9rem; color: var(--gray-500); margin-top: -8px; margin-bottom: 16px;"><em>Left: Dental health education booth &bull; Right: Gold Standard Urology partnering to serve the community</em></p>
+
+          <div style="margin: 24px 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+            <img src="assets/images/gallery/mbongi-pledge-group.jpg" alt="Community members celebrating during the Mbongi Pledge ceremony" style="width: 100%; height: auto; display: block;" />
+          </div>
+          <p style="text-align: center; font-size: 0.9rem; color: var(--gray-500); margin-top: -16px; margin-bottom: 16px;"><em>The Mbongi Pledge ceremony &mdash; community members pledging together for collective wellness</em></p>
+
+          <div style="margin: 24px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+            <div style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+              <img src="assets/images/gallery/gut-healing-circle.jpg" alt="Community members at the GUT Healing Circle" style="width: 100%; height: 200px; object-fit: cover; display: block;" />
+            </div>
+            <div style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+              <img src="assets/images/gallery/healing-circle-heart-hands.jpg" alt="Young attendees making heart shapes at the Healing Circle" style="width: 100%; height: 200px; object-fit: cover; display: block;" />
+            </div>
+            <div style="border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+              <img src="assets/images/gallery/uv-me-booth.jpg" alt="UCLA students at the UV and ME skin health booth" style="width: 100%; height: 200px; object-fit: cover; display: block;" />
+            </div>
+          </div>
+          <p style="text-align: center; font-size: 0.9rem; color: var(--gray-500); margin-top: -4px; margin-bottom: 16px;"><em>GUT Healing Circle &bull; Community heart hands &bull; UV &amp; ME skin health education</em></p>
+
+          <div style="margin: 24px 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);">
+            <img src="assets/images/gallery/park-wide.jpg" alt="Outdoor yoga and meditation session at the 2024 Community Health Fair" style="width: 100%; height: auto; display: block;" />
+          </div>
+          <p style="text-align: center; font-size: 0.9rem; color: var(--gray-500); margin-top: -16px; margin-bottom: 32px;"><em>Outdoor yoga and meditation — the Soul component of our Mind, Body &amp; Soul framework</em></p>
         </div>
 
-        <p>The response from community members told us everything we needed to know about why this work matters — and why we&rsquo;re coming back in 2026, bigger and more prepared than before.</p>
-
-        <div style="margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="what-we-do.html" class="btn btn-primary">See What We Do</a>
-          <a href="support.html" class="btn btn-outline-dark">Get Involved</a>
+        <div class="fade-in">
+          <div class="impact-row">
+            <div class="impact-box"><span class="num">120<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Residents of Baldwin Village served</span></div>
+            <div class="impact-box"><span class="num">100<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Health screenings conducted</span></div>
+            <div class="impact-box"><span class="num">24</span><span class="lbl">Social needs assessments completed</span></div>
+            <div class="impact-box"><span class="num">16</span><span class="lbl">Connected to community resources</span></div>
+          </div>
         </div>
+
+        <div class="fade-in">
+          <p>The response from community members told us everything we needed to know about why this work matters &mdash; and why we&rsquo;re coming back in 2026, bigger and more prepared than before.</p>
+
+          <div style="margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="what-we-do.html" class="btn btn-primary">See What We Do</a>
+            <a href="support.html" class="btn btn-outline-dark">Get Involved</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <div><span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:#fff">BWP</span><span style="font-family:'Inter',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.4); letter-spacing:0.08em">&thinsp;—&thinsp;LA</span></div>
+          <div>
+            <img src="assets/images/logo-footer.png" alt="Black Wellness Project LA" style="height: 80px; width: auto; filter: brightness(0) invert(1);">
+          </div>
           <p class="footer-tagline">Black Wellness Project LA<br>A SoCal SNMA Initiative</p>
         </div>
         <div class="footer-links">
@@ -121,15 +179,41 @@
           <a href="support.html">Support Us</a>
           <a href="contact.html">Contact</a>
         </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Black Wellness Project LA. All rights reserved.</p></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Black Wellness Project LA. All rights reserved.</p>
+        <p>A SoCal SNMA Initiative</p>
+      </div>
     </div>
   </footer>
 
+  <!-- ==================== SCRIPTS ==================== -->
   <script>
     const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

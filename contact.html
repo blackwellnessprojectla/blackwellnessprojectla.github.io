@@ -7,98 +7,110 @@
   <meta name="description" content="Get in touch with Black Wellness Project LA." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .contact-page { max-width: 800px; margin: 0 auto; }
-    .contact-ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 48px 0; }
-    .contact-way { padding: 32px 28px; background: var(--cream); border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.06); }
-    .contact-way-icon { font-size: 1.8rem; margin-bottom: 12px; }
-    .contact-way h3 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--black); margin-bottom: 8px; }
-    .contact-way p { font-size: 0.87rem; color: var(--gray); margin-bottom: 14px; line-height: 1.6; }
-    .contact-way a.link { font-size: 0.9rem; font-weight: 600; color: var(--green-dark); }
-    .contact-way a.link:hover { text-decoration: underline; }
-    .contact-intro { font-size: 1.05rem; color: var(--gray); line-height: 1.75; margin-bottom: 12px; }
-    .faq { margin-top: 64px; }
-    .faq h2 { font-family: var(--font-serif); font-size: 1.8rem; color: var(--black); margin-bottom: 28px; }
-    .faq-item { padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
-    .faq-item h4 { font-size: 0.95rem; font-weight: 600; color: var(--black); margin-bottom: 8px; }
-    .faq-item p { font-size: 0.9rem; color: var(--gray); line-height: 1.65; }
-  </style>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta property="og:image" content="assets/images/og-image.png" />
+  <meta property="og:type" content="website" />
 </head>
 <body>
 
+  <!-- ==================== NAVIGATION ==================== -->
   <nav class="nav scrolled" id="nav">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="logo-bwp" style="color:var(--green-dark)">BWP</span><span class="logo-la" style="color:var(--gray)">&thinsp;—&thinsp;LA</span>
+        <img src="assets/images/logo-nav.png" alt="BWP-LA Logo" style="height: 40px; width: auto; vertical-align: middle;">
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span style="background:var(--black)"></span><span style="background:var(--black)"></span><span style="background:var(--black)"></span>
+        <span style="background:var(--gray-900)"></span><span style="background:var(--gray-900)"></span><span style="background:var(--gray-900)"></span>
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="mission.html">Our Mission</a></li>
         <li><a href="what-we-do.html">What We Do</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="support.html">Support Us</a></li>
-        <li><a href="contact.html" style="color:var(--green-dark); font-weight:600">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-      <a href="support.html" class="nav-cta">Get Involved</a>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" aria-label="Twitter/X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+      <a href="support.html" class="nav-cta" style="background:var(--green-dark); color:var(--white); border-color:var(--green-dark)">Get Involved</a>
     </div>
   </nav>
 
+  <!-- ==================== PAGE HERO ==================== -->
   <section class="page-hero">
     <div class="container">
       <span class="page-hero-label">Say Hello</span>
       <h1 class="page-hero-title">Let&rsquo;s Connect</h1>
-      <p class="page-hero-sub">Whether you&rsquo;re a community member, a potential partner, a healthcare provider, or a future volunteer — we want to hear from you.</p>
+      <p class="page-hero-sub">Whether you&rsquo;re a community member, a potential partner, a healthcare provider, or a future volunteer &mdash; we want to hear from you.</p>
     </div>
   </section>
 
+  <!-- ==================== CONTACT CONTENT ==================== -->
   <section class="section">
     <div class="container">
       <div class="contact-page">
 
-        <p class="contact-intro">We&rsquo;re a student-run collective — so responses may take a few days, but we read every message and take every inquiry seriously. The best way to reach us is by email.</p>
+        <p class="contact-intro fade-in">We&rsquo;re a student-run collective &mdash; so responses may take a few days, but we read every message and take every inquiry seriously. The best way to reach us is by email.</p>
 
-        <div class="contact-ways">
+        <div class="contact-ways fade-in">
           <div class="contact-way">
-            <div class="contact-way-icon">📧</div>
+            <div class="contact-way-icon">&#x1F4E7;</div>
             <h3>General Inquiries</h3>
             <p>Questions about our work, who we are, or how to get involved</p>
             <a href="mailto:blackwellnessprojectla@gmail.com" class="link">blackwellnessprojectla@gmail.com</a>
           </div>
           <div class="contact-way">
-            <div class="contact-way-icon">🤝</div>
+            <div class="contact-way-icon">&#x1F91D;</div>
             <h3>Partner With Us</h3>
             <p>Community organizations, clinics, or advocacy groups interested in collaborating</p>
             <a href="mailto:blackwellnessprojectla@gmail.com?subject=Partnership Inquiry" class="link">Send a Partnership Note</a>
           </div>
           <div class="contact-way">
-            <div class="contact-way-icon">🌿</div>
+            <div class="contact-way-icon">&#x1F33F;</div>
             <h3>Volunteer</h3>
             <p>Ready to show up? Let us know your interests and availability</p>
             <a href="mailto:blackwellnessprojectla@gmail.com?subject=Volunteer Interest" class="link">Email to Volunteer</a>
           </div>
           <div class="contact-way">
-            <div class="contact-way-icon">💛</div>
+            <div class="contact-way-icon">&#x1F49B;</div>
             <h3>Sponsor or Donate</h3>
             <p>Interested in supporting an event or contributing financially</p>
             <a href="mailto:blackwellnessprojectla@gmail.com?subject=Sponsorship Inquiry" class="link">Get Sponsorship Info</a>
           </div>
         </div>
 
-        <div style="background: var(--green-light); border-radius: var(--radius); padding: 32px 36px; margin: 40px 0; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        <!-- Social media callout -->
+        <div class="fade-in" style="background: var(--green-light); border-radius: var(--radius); padding: 36px; margin: 40px 0; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 240px;">
-            <p style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--black); margin-bottom: 6px;">Based in Los Angeles</p>
-            <p style="font-size: 0.88rem; color: var(--gray);">Serving communities across South LA, with a focus on Baldwin Village and surrounding neighborhoods</p>
+            <p style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--gray-900); margin-bottom: 6px;">Follow Us Online</p>
+            <p style="font-size: 0.88rem; color: var(--gray-500); margin-bottom: 16px;">Stay updated on events, stories, and community impact.</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="gap:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                Instagram
+              </a>
+              <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" class="btn btn-sm btn-outline-dark" style="gap:8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Twitter/X
+              </a>
+            </div>
           </div>
           <div style="flex-shrink: 0;">
-            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-dark);">📍 Los Angeles, CA</span>
+            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-dark);">&#x1F4CD; Los Angeles, CA</span>
           </div>
         </div>
 
-        <div class="faq">
+        <!-- FAQ -->
+        <div class="faq fade-in">
           <h2>Common Questions</h2>
           <div class="faq-item">
             <h4>I&rsquo;m a community member. How do I find out about your events?</h4>
@@ -106,7 +118,7 @@
           </div>
           <div class="faq-item">
             <h4>I&rsquo;m a medical student. Can I get involved?</h4>
-            <p>Yes! We&rsquo;re always welcoming new student members, especially from UCLA, CDU, and UCI — though students from any school are welcome to volunteer. Reach out by email.</p>
+            <p>Yes! We&rsquo;re always welcoming new student members, especially from UCLA, CDU, and UCI &mdash; though students from any school are welcome to volunteer. Reach out by email.</p>
           </div>
           <div class="faq-item">
             <h4>I&rsquo;m a healthcare provider who wants to offer services at your fair. How does that work?</h4>
@@ -122,11 +134,14 @@
     </div>
   </section>
 
+  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <div><span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:#fff">BWP</span><span style="font-family:'Inter',sans-serif; font-size:0.85rem; color:rgba(255,255,255,0.4); letter-spacing:0.08em">&thinsp;—&thinsp;LA</span></div>
+          <div>
+            <img src="assets/images/logo-footer.png" alt="Black Wellness Project LA" style="height: 80px; width: auto; filter: brightness(0) invert(1);">
+          </div>
           <p class="footer-tagline">Black Wellness Project LA<br>A SoCal SNMA Initiative</p>
         </div>
         <div class="footer-links">
@@ -136,14 +151,41 @@
           <a href="support.html">Support Us</a>
           <a href="contact.html">Contact</a>
         </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-bottom"><p>&copy; 2026 Black Wellness Project LA. All rights reserved.</p></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Black Wellness Project LA. All rights reserved.</p>
+        <p>A SoCal SNMA Initiative</p>
+      </div>
     </div>
   </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
   <script>
     const toggle = document.getElementById('navToggle');
-    const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

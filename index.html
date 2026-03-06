@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Black Wellness Project LA — Black Student Doctors Initiative</title>
+  <title>Black Wellness Project LA — Care Rooted in Community</title>
   <meta name="description" content="Black Wellness Project LA is a collective of medical students dedicated to improving health outcomes for the Black community in Los Angeles." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta property="og:image" content="assets/images/og-image.png" />
+  <meta property="og:type" content="website" />
 </head>
 <body>
 
@@ -16,7 +21,7 @@
   <nav class="nav" id="nav">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="logo-bwp">BWP</span><span class="logo-la">&thinsp;—&thinsp;LA</span>
+        <img src="assets/images/logo-nav.png" alt="BWP-LA Logo" style="height: 40px; width: auto; vertical-align: middle;">
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -28,6 +33,14 @@
         <li><a href="support.html">Support Us</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" aria-label="Twitter/X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
       <a href="support.html" class="nav-cta">Get Involved</a>
     </div>
   </nav>
@@ -35,12 +48,11 @@
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="home">
     <div class="hero-bg">
-      <!-- INSTRUCTIONS: Replace hero.JPG with your best photo from the Photo Album folder -->
       <img src="assets/images/hero.JPG" alt="Community members at the 2024 Dr. Edith Mitchell Community Health Fair in Baldwin Village, Los Angeles" class="hero-img" />
       <div class="hero-overlay"></div>
     </div>
-    <div class="hero-content container">
-      <span class="hero-eyebrow">Black Wellness Project LA &mdash; Black Student Doctors initiative Initiative</span>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Black Wellness Project LA &mdash; A SoCal SNMA Initiative</span>
       <h1 class="hero-heading">Care Rooted<br>in Community</h1>
       <p class="hero-sub">A collective of Black medical students across Los Angeles, building health initiatives grounded in dignity, trust, and our community's own vision of wellness.</p>
       <div class="hero-actions">
@@ -54,50 +66,137 @@
   <div class="cred-bar">
     <div class="cred-bar-inner">
       <div class="cred-item">
-        <span class="cred-icon">⚕</span>
-        <span>Students with unrelenting passion for their community</span>
+        <span class="cred-icon">&starf;</span>
+        <span>Physician-Led, Student Run</span>
       </div>
       <div class="cred-divider"></div>
       <div class="cred-item">
-        <span class="cred-icon">🤝</span>
+        <span class="cred-icon">&hearts;</span>
         <span>Community Centered</span>
       </div>
       <div class="cred-divider"></div>
       <div class="cred-item">
-        <span class="cred-icon">📍</span>
+        <span class="cred-icon">&#9906;</span>
         <span>Los Angeles, California</span>
       </div>
     </div>
   </div>
 
+  <!-- ==================== ABOUT / INTRO SPLIT ==================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-split fade-in">
+        <div class="about-img-wrap">
+          <img src="assets/images/gallery/team-2026.jpg" alt="The 2026 BWP-LA team at their first planning meeting" />
+        </div>
+        <div class="about-text">
+          <span class="section-label">Who We Are</span>
+          <h2>Black medical students building health from the ground up</h2>
+          <p>Black Wellness Project LA is a collective of medical students from UCLA, Charles R. Drew University, and UC Irvine. We came together with a shared understanding: that our communities face not just health disparities, but barriers of access, trust, and representation within the medical system itself.</p>
+          <p>We are future physicians choosing to act now — launching health initiatives that bring care directly to the communities that need it most.</p>
+          <a href="mission.html" class="btn btn-outline-dark" style="margin-top: 12px;">Read Our Full Story &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== WHAT WE DO ==================== -->
   <section class="section what-we-do" id="what-we-do">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <span class="section-label">What We Do</span>
         <h2 class="section-title">Health that meets you<br>where you are</h2>
         <p class="section-sub">We believe wellness is more than the absence of disease. Our programming addresses the full spectrum of health — body, mind, and spirit.</p>
       </div>
       <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon" style="background:#EAF4EE; color:#1B4D3E; font-size:1.4rem">🏥</div>
+        <div class="card fade-in">
+          <div class="card-icon" style="background:#EAF4EE; color:#1B4D3E;">&#x1F3E5;</div>
           <h3 class="card-title">Community Health Events</h3>
           <p class="card-text">Free health fairs offering screenings, wellness activities, and resource connections in the heart of the communities we serve.</p>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:#F5E6C8; color:#8B6914; font-size:1.4rem">📚</div>
+        <div class="card fade-in">
+          <div class="card-icon" style="background:#F5E6C8; color:#8B6914;">&#x1F4DA;</div>
           <h3 class="card-title">Health Education</h3>
           <p class="card-text">Workshops and listening sessions that give community members the knowledge and tools to advocate for their own health.</p>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:#EAF4EE; color:#1B4D3E; font-size:1.4rem">🗺</div>
+        <div class="card fade-in">
+          <div class="card-icon" style="background:#EAF4EE; color:#1B4D3E;">&#x1F5FA;</div>
           <h3 class="card-title">Resource Navigation</h3>
           <p class="card-text">Connecting individuals to local services — from social support to specialist care — so that no one falls through the cracks.</p>
         </div>
-        <div class="card">
-          <div class="card-icon" style="background:#F5E6C8; color:#8B6914; font-size:1.4rem">🤝</div>
+        <div class="card fade-in">
+          <div class="card-icon" style="background:#F5E6C8; color:#8B6914;">&#x1F91D;</div>
           <h3 class="card-title">Community Partnerships</h3>
           <p class="card-text">Building alongside trusted local organizations to create lasting infrastructure for Black health in Los Angeles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PHOTO GALLERY ==================== -->
+  <section class="section gallery" id="gallery">
+    <div class="container-wide">
+      <div class="section-header fade-in">
+        <span class="section-label">Our Community</span>
+        <h2 class="section-title">2024 Health Fair in Action</h2>
+        <p class="section-sub">The Dr. Edith Mitchell Community Health Fair brought free health services and celebration to Baldwin Village.</p>
+      </div>
+      <div class="gallery-grid fade-in">
+        <!-- Row 1: Wide hero shot + 2 smaller -->
+        <div class="gallery-item wide">
+          <img src="assets/images/gallery/fair-wide-view.jpg" alt="Wide view of the health fair with vendor tents, bounce house, and community members at Baldwin Village park" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/volunteers-hug-bounce-house.jpg" alt="Two BWP-LA volunteers embracing joyfully in front of the bounce house" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/uv-me-booth.jpg" alt="UCLA medical students engaging community members at the UV and ME skin health booth with gold balloons" />
+        </div>
+        <!-- Row 2 -->
+        <div class="gallery-item">
+          <img src="assets/images/gallery/dental-health-booth.jpg" alt="Medical students in scrubs teaching dental health at a community screening booth" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/gold-standard-urology-doc.jpg" alt="Gold Standard Urology physician in white coat connecting with a volunteer at the health fair" />
+        </div>
+        <div class="gallery-item wide">
+          <img src="assets/images/gallery/mbongi-pledge-group.jpg" alt="Community members celebrating with flowers during the Mbongi Pledge ceremony" />
+        </div>
+        <!-- Row 3 -->
+        <div class="gallery-item">
+          <img src="assets/images/gallery/gut-healing-circle.jpg" alt="Community members seated in front of the GUT Healing Circle inflatable" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/giveaway-cookware.jpg" alt="Volunteer handing a cookware prize to a smiling community member" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/molina-healthcare-booth.jpg" alt="Molina Healthcare partner booth with community members receiving health information" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/healing-circle-heart-hands.jpg" alt="Young attendees making heart shapes with their hands at the GUT Healing Circle" />
+        </div>
+        <!-- Row 4: Wide + smaller -->
+        <div class="gallery-item wide">
+          <img src="assets/images/gallery/team-health-fair-bw.jpg" alt="The BWP-LA team in matching Dr. Edith Mitchell Health Fair shirts, black and white group photo" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/spinning-wheel-booth.jpg" alt="Community member playing the spinning wheel prize game at a partner booth" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/community-food-service.jpg" alt="Volunteers and community members sharing a meal at the health fair food station" />
+        </div>
+        <!-- Row 5 -->
+        <div class="gallery-item">
+          <img src="assets/images/gallery/pledge-leader-flowers.jpg" alt="Pledge ceremony leader holding flowers and reading from the Mbongi Pledge" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/giveaway-celebration.jpg" alt="Volunteer holding up a prize box while crowd celebrates at the raffle giveaway" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/skin-health-booth.jpg" alt="Dermatology education booth with Scan Here QR code for skin health resources" />
+        </div>
+        <div class="gallery-item">
+          <img src="assets/images/gallery/healing-circle-facilitator.jpg" alt="Healing circle facilitator speaking to seated community members in the park" />
         </div>
       </div>
     </div>
@@ -106,7 +205,7 @@
   <!-- ==================== IMPACT ==================== -->
   <section class="section impact" id="impact">
     <div class="container">
-      <div class="impact-inner">
+      <div class="impact-inner fade-in">
         <div class="impact-text">
           <span class="section-label light">Our Impact</span>
           <h2 class="section-title light">2024: The Dr. Edith Mitchell<br>Community Health Fair</h2>
@@ -138,7 +237,7 @@
   <!-- ==================== COMMUNITY VOICE ==================== -->
   <section class="section community-voice">
     <div class="container">
-      <div class="quote-block">
+      <div class="quote-block fade-in">
         <span class="quote-mark">&ldquo;</span>
         <p class="quote-text">It&rsquo;s always good to have any type of event and people showing that they care about the community&hellip; it&rsquo;s not always that we get this. So when we do, we&rsquo;re grateful. It&rsquo;s nice to see familiar faces, new faces, and the love that we feel when we&rsquo;re here.</p>
         <p class="quote-attr">— Community member, Baldwin Village, 2024</p>
@@ -149,63 +248,26 @@
   <!-- ==================== UPCOMING EVENTS ==================== -->
   <section class="section events" id="events">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <span class="section-label">What&rsquo;s Coming</span>
         <h2 class="section-title">2026 Programming</h2>
         <p class="section-sub">We&rsquo;re expanding this year with three initiatives designed to deepen our relationship with Black communities across Los Angeles.</p>
       </div>
 
-      <div class="events-list">
-        <div class="event-item">
-          <div class="event-date">
-            <span class="event-month">MAR</span>
-            <span class="event-year">2026</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-name">Community Listening Sessions</h3>
-            <p class="event-location">📍 Baldwin Village Area, Los Angeles</p>
-            <p class="event-desc">Before we plan, we listen. Our listening sessions bring us into direct conversation with community members to shape programming rooted in their actual needs and priorities.</p>
-          </div>
-          <div class="event-tag">Free</div>
-        </div>
-
-        <div class="event-item">
-          <div class="event-date">
-            <span class="event-month">APR</span>
-            <span class="event-year">2026</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-name">Health Education Workshops</h3>
-            <p class="event-location">📍 Los Angeles, CA</p>
-            <p class="event-desc">Interactive workshops on health topics chosen by community members — because education is most powerful when it starts with the questions you actually have.</p>
-          </div>
-          <div class="event-tag">Free</div>
-        </div>
-
-        <div class="event-item featured-event">
-          <div class="event-date">
-            <span class="event-month">AUG</span>
-            <span class="event-year">2026</span>
-          </div>
-          <div class="event-info">
-            <h3 class="event-name">Annual Community Health Fair</h3>
-            <p class="event-location">📍 Greater Baldwin Village, Los Angeles</p>
-            <p class="event-desc">Our flagship event returns. Free health screenings, wellness activities, resource navigation, and community celebration — all grounded in our Mind, Body &amp; Soul framework.</p>
-          </div>
-          <div class="event-tag featured-tag">Flagship Event</div>
-        </div>
+      <div class="events-list" id="eventsContainer">
+        <!-- Events loaded from events.json -->
       </div>
 
-      <div class="events-cta">
+      <div class="events-cta fade-in">
         <a href="events.html" class="btn btn-primary">View All Events &amp; Updates</a>
       </div>
     </div>
   </section>
 
   <!-- ==================== MIND BODY SOUL ==================== -->
-  <section class="section framework">
+  <section class="section framework" id="framework">
     <div class="container">
-      <div class="framework-inner">
+      <div class="framework-inner fade-in">
         <div class="framework-text">
           <span class="section-label">Our Approach</span>
           <h2 class="section-title">The Mind, Body<br>&amp; Soul Framework</h2>
@@ -213,21 +275,21 @@
         </div>
         <div class="framework-pillars">
           <div class="pillar">
-            <span class="pillar-icon">🧠</span>
+            <span class="pillar-icon">&#x1F9E0;</span>
             <div>
               <h4>Mind</h4>
               <p>Health education, listening sessions, and healing circles that inform, empower, and create space for community voices</p>
             </div>
           </div>
           <div class="pillar">
-            <span class="pillar-icon">💪</span>
+            <span class="pillar-icon">&#x1F4AA;</span>
             <div>
               <h4>Body</h4>
               <p>Free screenings — blood pressure, glucose, oral cancer, PSA, STI/HIV — bringing care to those with the greatest barriers to access</p>
             </div>
           </div>
           <div class="pillar">
-            <span class="pillar-icon">✨</span>
+            <span class="pillar-icon">&#x2728;</span>
             <div>
               <h4>Soul</h4>
               <p>Yoga, sound baths, massage, music, kids&rsquo; activities, and joy — because wellness includes feeling fully alive</p>
@@ -241,31 +303,31 @@
   <!-- ==================== GET INVOLVED ==================== -->
   <section class="section get-involved" id="get-involved">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <span class="section-label">Join the Work</span>
         <h2 class="section-title">How to Get Involved</h2>
         <p class="section-sub">There are many ways to show up for this work. Find what fits you.</p>
       </div>
       <div class="involve-grid">
-        <div class="involve-card">
+        <div class="involve-card fade-in">
           <div class="involve-number">01</div>
           <h3>Volunteer</h3>
           <p>Join us at events. No medical background required — just commitment and care for community.</p>
           <a href="support.html#volunteer" class="involve-link">Volunteer with Us &rarr;</a>
         </div>
-        <div class="involve-card">
+        <div class="involve-card fade-in">
           <div class="involve-number">02</div>
           <h3>Donate</h3>
           <p>Every dollar goes directly to programming, supplies, and connecting community members to care.</p>
           <a href="support.html#donate" class="involve-link">Make a Donation &rarr;</a>
         </div>
-        <div class="involve-card">
+        <div class="involve-card fade-in">
           <div class="involve-number">03</div>
           <h3>Partner</h3>
           <p>Organizations aligned with our mission: let&rsquo;s build something together neither of us could alone.</p>
           <a href="support.html#partner" class="involve-link">Become a Partner &rarr;</a>
         </div>
-        <div class="involve-card">
+        <div class="involve-card fade-in">
           <div class="involve-number">04</div>
           <h3>Sponsor</h3>
           <p>Support a specific event or initiative. Your sponsorship makes direct community health programming possible.</p>
@@ -278,12 +340,12 @@
   <!-- ==================== PARTNERS ==================== -->
   <section class="section partners">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header fade-in">
         <span class="section-label">Our Partners</span>
         <h2 class="section-title">Built on Trust</h2>
         <p class="section-sub">We work alongside organizations with deep roots in our communities.</p>
       </div>
-      <div class="partners-list">
+      <div class="partners-list fade-in">
         <div class="partner-item">TRAP Medicine</div>
         <div class="partner-item">UCLA Health</div>
         <div class="partner-item">Charles R. Drew Medical Society</div>
@@ -291,6 +353,33 @@
         <div class="partner-item">UCLA Center of Excellence</div>
         <div class="partner-item">SoCal SNMA</div>
         <div class="partner-item">Elevated Hands</div>
+        <div class="partner-item">Genentech</div>
+        <div class="partner-item">Bloom</div>
+        <div class="partner-item">Ignited Light</div>
+        <div class="partner-item">Molina Healthcare</div>
+        <div class="partner-item">Gold Standard Urology</div>
+        <div class="partner-item">GUT Healing Circle</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOLLOW US / SOCIAL ==================== -->
+  <section class="section social-section">
+    <div class="container">
+      <div class="social-inner fade-in">
+        <span class="section-label">Stay Connected</span>
+        <h2 class="section-title">Follow Our Journey</h2>
+        <p class="section-sub" style="margin: 0 auto 12px;">Stay updated on events, stories, and community impact.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" class="social-link">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @blackwellnessprojectla
+          </a>
+          <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" class="social-link">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            @bwpla
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -298,18 +387,18 @@
   <!-- ==================== CONTACT ==================== -->
   <section class="section contact" id="contact">
     <div class="container">
-      <div class="contact-inner">
+      <div class="contact-inner fade-in">
         <div class="contact-text">
           <span class="section-label">Say Hello</span>
           <h2 class="section-title">Let&rsquo;s Connect</h2>
           <p>Whether you&rsquo;re a community member, potential partner, or future volunteer — we&rsquo;d love to hear from you.</p>
           <div class="contact-details">
             <div class="contact-item">
-              <span class="contact-icon">📧</span>
+              <span class="contact-icon">&#x1F4E7;</span>
               <a href="mailto:blackwellnessprojectla@gmail.com">blackwellnessprojectla@gmail.com</a>
             </div>
             <div class="contact-item">
-              <span class="contact-icon">📍</span>
+              <span class="contact-icon">&#x1F4CD;</span>
               <span>Los Angeles, California</span>
             </div>
           </div>
@@ -330,7 +419,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <div>
-            <span class="logo-bwp" style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:600; color:#fff">BWP</span><span class="logo-la" style="font-family:'Inter',sans-serif; font-size:0.85rem; font-weight:500; color:rgba(255,255,255,0.4); letter-spacing:0.08em">&thinsp;—&thinsp;LA</span>
+            <img src="assets/images/logo-footer.png" alt="Black Wellness Project LA" style="height: 80px; width: auto; filter: brightness(0) invert(1);">
           </div>
           <p class="footer-tagline">Black Wellness Project LA<br>A SoCal SNMA Initiative</p>
         </div>
@@ -341,41 +430,98 @@
           <a href="support.html">Support Us</a>
           <a href="contact.html">Contact</a>
         </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://twitter.com/bwpla" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Black Wellness Project LA. All rights reserved.</p>
+        <p>A SoCal SNMA Initiative</p>
       </div>
     </div>
   </footer>
 
   <!-- ==================== SCRIPTS ==================== -->
   <script>
-    // Sticky nav with transparency-to-white scroll
+    // ---- Sticky nav scroll effect ----
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
+      nav.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Mobile menu toggle
+    // ---- Mobile menu toggle ----
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-    });
-
-    // Close menu when link clicked
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
     links.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => links.classList.remove('open'));
     });
 
-    // Hero image fallback: if hero.JPG doesn't load, show gradient
+    // ---- Hero image fallback ----
     const heroImg = document.querySelector('.hero-img');
     if (heroImg) {
       heroImg.onerror = function() {
         this.style.display = 'none';
-        document.querySelector('.hero-bg').style.background = 'linear-gradient(135deg, #0e281e 0%, #1B4D3E 60%, #2D6A4F 100%)';
+        document.querySelector('.hero-bg').style.background =
+          'linear-gradient(135deg, #0e281e 0%, #1B4D3E 60%, #2D6A4F 100%)';
       };
     }
+
+    // ---- Scroll animations (fade-in) ----
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ---- Load events from events.json ----
+    async function loadEvents() {
+      try {
+        const res = await fetch('events.json');
+        const events = await res.json();
+        const container = document.getElementById('eventsContainer');
+        if (!container) return;
+
+        // Sort by date, show upcoming
+        const now = new Date();
+        const upcoming = events
+          .filter(e => new Date(e.date) >= now || true) // show all for now
+          .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        container.innerHTML = upcoming.map(e => `
+          <div class="event-item ${e.featured ? 'featured-event' : ''} fade-in">
+            <div class="event-date">
+              <span class="event-month">${e.month}</span>
+              <span class="event-day">${e.day}</span>
+              <span class="event-year">${e.year}</span>
+            </div>
+            <div class="event-info">
+              <h3 class="event-name">${e.title}</h3>
+              <p class="event-location">&#x1F4CD; ${e.location}${e.time ? ' &middot; ' + e.time : ''}</p>
+              <p class="event-desc">${e.description}</p>
+              ${e.rsvpLink ? `<a href="${e.rsvpLink}" class="btn btn-sm btn-primary event-rsvp">RSVP &rarr;</a>` : ''}
+            </div>
+            <div class="event-tag ${e.featured ? 'featured-tag' : ''}">${e.featured ? 'Flagship' : e.type === 'free' ? 'Free' : e.type}</div>
+          </div>
+        `).join('');
+
+        // Re-observe new fade-in elements
+        container.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      } catch (err) {
+        console.log('Events will load when served from a web server');
+      }
+    }
+    loadEvents();
   </script>
 </body>
 </html>
