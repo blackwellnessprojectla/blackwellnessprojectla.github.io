@@ -14,6 +14,417 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
   <meta property="og:image" content="assets/images/og-image.png" />
   <meta property="og:type" content="website" />
+
+  <!-- Events page-specific styles -->
+  <style>
+    /* ---- Hero logo accent ---- */
+    .page-hero-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .page-hero-logo {
+      width: 100px;
+      height: auto;
+      opacity: 0.85;
+      filter: brightness(0) invert(1);
+      flex-shrink: 0;
+    }
+
+    /* ---- Redesigned Event Cards (split layout) ---- */
+    .event-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .event-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .event-card:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-6px);
+    }
+    .event-card.featured-card {
+      border: 2px solid var(--gold);
+    }
+
+    /* Flyer / visual side */
+    .event-card-visual {
+      position: relative;
+      min-height: 320px;
+      overflow: hidden;
+      background: var(--green-light);
+    }
+    .event-card-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .event-card:hover .event-card-visual img {
+      transform: scale(1.05);
+    }
+    /* Placeholder pattern for events without a flyer */
+    .event-card-visual.no-flyer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+      padding: 40px;
+      text-align: center;
+    }
+    .event-card-visual.no-flyer .placeholder-icon {
+      font-size: 3.5rem;
+      margin-bottom: 16px;
+      opacity: 0.9;
+    }
+    .event-card-visual.no-flyer .placeholder-text {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.9);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    .event-card-visual.no-flyer .placeholder-sub {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      margin-top: 8px;
+    }
+
+    /* Event tag (floating badge) */
+    .event-card-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--green-dark);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      z-index: 2;
+    }
+    .event-card-tag.flagship {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* Details side */
+    .event-card-details {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .event-card-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .event-card-date-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      background: var(--green-dark);
+      border-radius: 10px;
+      color: var(--white);
+      min-width: 60px;
+    }
+    .event-card-date-box .month {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .event-card-date-box .day {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    .event-card-date-text {
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      line-height: 1.4;
+    }
+    .event-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .event-card-location {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .event-card-desc {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .event-card-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    /* ---- Stagger animation for cards ---- */
+    .event-card:nth-child(1) { transition-delay: 0s; }
+    .event-card:nth-child(2) { transition-delay: 0.15s; }
+    .event-card:nth-child(3) { transition-delay: 0.3s; }
+
+    /* ---- "Stay in the Loop" mailing list section ---- */
+    .mailing-cta {
+      background: linear-gradient(135deg, var(--green-dark) 0%, #244F3F 100%);
+      border-radius: var(--radius);
+      padding: 56px 48px;
+      margin-top: 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mailing-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .mailing-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(201,151,63,0.08);
+    }
+    .mailing-cta h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .mailing-cta p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      margin-bottom: 28px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 1;
+    }
+    .mailing-cta .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- Instagram Feed Section ---- */
+    .insta-section {
+      margin-top: 80px;
+      text-align: center;
+    }
+    .insta-header {
+      margin-bottom: 32px;
+    }
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .insta-item {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .insta-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .insta-item:hover img {
+      transform: scale(1.08);
+    }
+    .insta-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(27,77,62,0.5) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .insta-item:hover::after {
+      opacity: 1;
+    }
+    .insta-item .insta-overlay {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .insta-item:hover .insta-overlay {
+      opacity: 1;
+    }
+    .insta-follow-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    /* ---- Previous Events Photo Gallery ---- */
+    .prev-events {
+      margin-top: 80px;
+    }
+    .prev-events-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 12px;
+    }
+    .prev-events-gallery .gallery-photo {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .prev-events-gallery .gallery-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .prev-events-gallery .gallery-photo:hover img {
+      transform: scale(1.06);
+    }
+    .prev-events-gallery .gallery-photo.wide {
+      grid-column: span 2;
+    }
+    .prev-events-gallery .gallery-photo.tall {
+      grid-row: span 2;
+    }
+
+    /* ---- Scroll-triggered animations ---- */
+    .slide-in-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .slide-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .slide-in-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .slide-in-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .scale-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ---- Responsive for new card layout ---- */
+    @media (max-width: 900px) {
+      .event-card {
+        grid-template-columns: 1fr;
+      }
+      .event-card-visual {
+        min-height: 240px;
+      }
+      .page-hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .page-hero-logo {
+        display: none;
+      }
+      .insta-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .prev-events-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
+      }
+    }
+    @media (max-width: 600px) {
+      .event-card-details {
+        padding: 24px 20px;
+      }
+      .event-card-title {
+        font-size: 1.3rem;
+      }
+      .mailing-cta {
+        padding: 40px 24px;
+      }
+      .insta-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .prev-events-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 140px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -45,51 +456,84 @@
     </div>
   </nav>
 
-  <!-- ==================== PAGE HERO ==================== -->
+  <!-- ==================== PAGE HERO (with logo on right) ==================== -->
   <section class="page-hero">
     <div class="container">
-      <span class="page-hero-label">2026 Calendar</span>
-      <h1 class="page-hero-title">Upcoming Events</h1>
-      <p class="page-hero-sub">All events are free and open to the community. Our programming is rooted in the Mind, Body &amp; Soul framework &mdash; designed to meet the whole person, not just their health data.</p>
+      <div class="page-hero-header">
+        <div>
+          <span class="page-hero-label">2026 Calendar</span>
+          <h1 class="page-hero-title">Upcoming Events</h1>
+          <p class="page-hero-sub">All events are free and open to the community. Our programming is rooted in the Mind, Body &amp; Soul framework &mdash; designed to meet the whole person, not just their health data.</p>
+        </div>
+        <img src="assets/images/logo-nav.png" alt="BWP-LA Logo" class="page-hero-logo" />
+      </div>
     </div>
   </section>
 
-  <!-- ==================== EVENTS LIST ==================== -->
+  <!-- ==================== EVENTS LIST (Redesigned Cards) ==================== -->
   <section class="section events">
     <div class="container">
-      <div class="events-list" id="eventsContainer">
+      <div class="events-list" id="eventsContainer" style="gap: 32px;">
         <!-- Events loaded dynamically from events.json -->
         <div class="fade-in" style="text-align:center; padding:48px; color:var(--gray-500);">
           <p>Loading events&hellip;</p>
         </div>
       </div>
 
-      <!-- HOW TO ADD EVENTS -->
-      <div class="fade-in" style="background: var(--cream); border-radius: var(--radius); padding: 40px; margin-top: 48px;">
-        <div style="max-width: 640px; margin: 0 auto; text-align: center;">
-          <span class="section-label">Stay in the Loop</span>
-          <h2 style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 500; color: var(--gray-900); margin: 12px 0;">Don&rsquo;t Miss an Event</h2>
-          <p style="font-size: 0.95rem; color: var(--gray-500); line-height: 1.75; margin-bottom: 28px;">Email us to join our mailing list, or follow us on social media to stay updated on upcoming programming, volunteer calls, and community news.</p>
-          <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-            <a href="mailto:blackwellnessprojectla@gmail.com?subject=Add me to the mailing list" class="btn btn-primary">Join Our Mailing List</a>
-            <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" class="btn btn-outline-dark">Follow on Instagram</a>
-          </div>
+      <!-- ==================== STAY IN THE LOOP (Mailing List) ==================== -->
+      <div class="mailing-cta fade-in">
+        <span class="section-label light">Stay in the Loop</span>
+        <h2>Don&rsquo;t Miss an Event</h2>
+        <p>Join our mailing list to get updates on upcoming events, volunteer calls, and community news delivered to your inbox. Or follow us on social to stay connected.</p>
+        <div class="cta-buttons">
+          <a href="https://docs.google.com/forms/d/1ogBJrifyPD3dSTTGP-UFmN04wkrzUJcoaXXzhnHL7GE/viewform" target="_blank" rel="noopener" class="btn btn-outline-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Join Our Mailing List
+          </a>
+          <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" class="btn btn-outline-gold">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Follow on Instagram
+          </a>
         </div>
       </div>
 
-      <!-- PAST EVENTS SECTION -->
-      <div class="fade-in" style="margin-top: 80px;">
+      <!-- ==================== INSTAGRAM FEED ==================== -->
+      <div class="insta-section fade-in">
+        <div class="insta-header">
+          <span class="section-label">Follow Along</span>
+          <h2 class="section-title" style="font-size: 2rem;">@blackwellnessprojectla</h2>
+          <p class="section-sub" style="margin: 8px auto 0;">See what we&rsquo;re up to between events.</p>
+        </div>
+        <div class="insta-grid" id="instaGrid">
+          <!-- Photos auto-populated from gallery as Instagram-style feed -->
+        </div>
+        <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" class="btn btn-outline-dark insta-follow-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Follow Us on Instagram
+        </a>
+      </div>
+
+      <!-- ==================== PREVIOUS EVENTS ==================== -->
+      <div class="prev-events fade-in" style="margin-top: 80px;">
         <div class="section-header">
           <span class="section-label">Looking Back</span>
           <h2 class="section-title">2024 Highlights</h2>
           <p class="section-sub">Our inaugural Dr. Edith Mitchell Community Health Fair brought care, community, and celebration to Baldwin Village.</p>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-          <div class="impact-box"><span class="num">120<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Community Members Served</span></div>
-          <div class="impact-box"><span class="num">100<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Health Screenings</span></div>
-          <div class="impact-box"><span class="num">24</span><span class="lbl">Social Needs Assessments</span></div>
-          <div class="impact-box"><span class="num">16</span><span class="lbl">Connected to Resources</span></div>
+
+        <!-- Impact stats -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px;">
+          <div class="impact-box scale-in"><span class="num">120<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Community Members Served</span></div>
+          <div class="impact-box scale-in"><span class="num">100<sup style="font-size:1.2rem">+</sup></span><span class="lbl">Health Screenings</span></div>
+          <div class="impact-box scale-in"><span class="num">24</span><span class="lbl">Social Needs Assessments</span></div>
+          <div class="impact-box scale-in"><span class="num">16</span><span class="lbl">Connected to Resources</span></div>
         </div>
+
+        <!-- Photo Gallery -->
+        <div class="prev-events-gallery" id="prevEventsGallery">
+          <!-- Photos loaded dynamically -->
+        </div>
+
         <div style="text-align: center; margin-top: 32px;">
           <a href="mission.html" class="btn btn-outline-dark">Read Our Full Story &rarr;</a>
         </div>
@@ -140,7 +584,7 @@
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
 
-    // ---- Scroll animations ----
+    // ---- Scroll animations (enhanced with multiple animation types) ----
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -150,9 +594,11 @@
         }
       });
     }, observerOptions);
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // ---- Load events from events.json ----
+    // Observe all animatable elements
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .event-card').forEach(el => observer.observe(el));
+
+    // ---- Load events from events.json (REDESIGNED CARD LAYOUT) ----
     async function loadEvents() {
       try {
         const res = await fetch('events.json');
@@ -160,34 +606,72 @@
         const container = document.getElementById('eventsContainer');
         if (!container) return;
 
-        const now = new Date();
-        const upcoming = events
-          .sort((a, b) => new Date(a.date) - new Date(b.date));
+        const upcoming = events.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         if (upcoming.length === 0) {
           container.innerHTML = '<div class="fade-in visible" style="text-align:center; padding:48px;"><p style="color:var(--gray-500); font-size:1.05rem;">No upcoming events at the moment. Check back soon or follow us on social media!</p></div>';
           return;
         }
 
-        container.innerHTML = upcoming.map(e => `
-          <div class="event-item ${e.featured ? 'featured-event' : ''} fade-in">
-            <div class="event-date">
-              <span class="event-month">${e.month}</span>
-              <span class="event-day">${e.day}</span>
-              <span class="event-year">${e.year}</span>
-            </div>
-            <div class="event-info">
-              <h3 class="event-name">${e.title}</h3>
-              <p class="event-location">&#x1F4CD; ${e.location}${e.time ? ' &middot; ' + e.time : ''}</p>
-              <p class="event-desc">${e.description}</p>
-              ${e.rsvpLink ? `<a href="${e.rsvpLink}" class="btn btn-sm btn-primary event-rsvp">RSVP &rarr;</a>` : ''}
-            </div>
-            <div class="event-tag ${e.featured ? 'featured-tag' : ''}">${e.featured ? 'Flagship' : e.type === 'free' ? 'Free' : e.type}</div>
-          </div>
-        `).join('');
+        container.innerHTML = upcoming.map((e, i) => {
+          // Build the visual side (flyer or placeholder)
+          let visualHTML;
+          if (e.flyerImage) {
+            visualHTML = `
+              <div class="event-card-visual">
+                <a href="${e.rsvpLink || '#'}" target="_blank" rel="noopener">
+                  <img src="${e.flyerImage}" alt="${e.title} Flyer" loading="lazy" />
+                </a>
+                <span class="event-card-tag ${e.featured ? 'flagship' : ''}">${e.featured ? 'Flagship' : e.type === 'free' ? 'Free' : e.type}</span>
+              </div>`;
+          } else {
+            // Pick an icon based on event type
+            const icons = { 'Community Listening Session': '🗣️', 'Health Education Workshops': '📋', 'Annual Community Health Fair': '🎪' };
+            const icon = icons[e.title] || '📅';
+            visualHTML = `
+              <div class="event-card-visual no-flyer">
+                <span class="event-card-tag ${e.featured ? 'flagship' : ''}">${e.featured ? 'Flagship' : e.type === 'free' ? 'Free' : e.type}</span>
+                <span class="placeholder-icon">${icon}</span>
+                <span class="placeholder-text">${e.title}</span>
+                <span class="placeholder-sub">${e.time}</span>
+              </div>`;
+          }
 
-        // Re-observe newly added fade-in elements
-        container.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+          // Alternate card direction for visual interest
+          const reversed = i % 2 === 1;
+
+          return `
+            <div class="event-card ${e.featured ? 'featured-card' : ''}" style="${reversed ? 'direction:rtl;' : ''}">
+              <div style="${reversed ? 'direction:ltr;' : ''}">
+                ${visualHTML}
+              </div>
+              <div class="event-card-details" style="${reversed ? 'direction:ltr;' : ''}">
+                <div class="event-card-date">
+                  <div class="event-card-date-box">
+                    <span class="month">${e.month}</span>
+                    <span class="day">${e.day}</span>
+                  </div>
+                  <div class="event-card-date-text">
+                    ${e.year}<br>${e.time}
+                  </div>
+                </div>
+                <h3 class="event-card-title">${e.title}</h3>
+                <p class="event-card-location">📍 ${e.location}</p>
+                <p class="event-card-desc">${e.description}</p>
+                <div class="event-card-actions">
+                  ${e.rsvpLink && !e.rsvpLink.startsWith('PLACEHOLDER') ?
+                    `<a href="${e.rsvpLink}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">RSVP &rarr;</a>` :
+                    e.rsvpLink && e.rsvpLink.startsWith('PLACEHOLDER') ?
+                    `<span class="btn btn-sm btn-outline-dark" style="opacity:0.6; cursor:default;">More Info Coming Soon</span>` :
+                    ''}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Re-observe newly added event cards for scroll animation
+        container.querySelectorAll('.event-card').forEach(el => observer.observe(el));
       } catch (err) {
         const container = document.getElementById('eventsContainer');
         container.innerHTML = `
@@ -197,6 +681,74 @@
       }
     }
     loadEvents();
+
+    // ---- Instagram-style photo feed (shuffles from gallery) ----
+    function loadInstaFeed() {
+      const galleryPhotos = [
+        'assets/images/gallery/fair-wide-view.jpg',
+        'assets/images/gallery/healing-circle-facilitator.jpg',
+        'assets/images/gallery/community-food-service.jpg',
+        'assets/images/gallery/dental-booth-child.jpg',
+        'assets/images/gallery/giveaway-celebration.jpg',
+        'assets/images/gallery/molina-community.jpg',
+        'assets/images/gallery/healing-circle-heart-hands.jpg',
+        'assets/images/gallery/skin-health-booth.jpg',
+        'assets/images/gallery/volunteers-hug-bounce-house.jpg',
+        'assets/images/gallery/team-health-fair-bw.jpg',
+        'assets/images/gallery/gut-healing-circle.jpg',
+        'assets/images/gallery/spinning-wheel-booth.jpg'
+      ];
+
+      // Shuffle and pick 3
+      const shuffled = galleryPhotos.sort(() => Math.random() - 0.5);
+      const picked = shuffled.slice(0, 3);
+
+      const grid = document.getElementById('instaGrid');
+      if (!grid) return;
+
+      grid.innerHTML = picked.map(src => `
+        <a href="https://www.instagram.com/blackwellnessprojectla/" target="_blank" rel="noopener" class="insta-item scale-in">
+          <img src="${src}" alt="BWP-LA community photo" loading="lazy" />
+          <span class="insta-overlay">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            @blackwellnessprojectla
+          </span>
+        </a>
+      `).join('');
+
+      grid.querySelectorAll('.scale-in').forEach(el => observer.observe(el));
+    }
+    loadInstaFeed();
+
+    // ---- Previous Events Photo Gallery ----
+    function loadPrevEventsGallery() {
+      const photos = [
+        { src: 'assets/images/gallery/fair-wide-view.jpg', cls: 'wide' },
+        { src: 'assets/images/gallery/healing-circle-facilitator.jpg', cls: '' },
+        { src: 'assets/images/gallery/dental-booth-child.jpg', cls: '' },
+        { src: 'assets/images/gallery/giveaway-celebration.jpg', cls: '' },
+        { src: 'assets/images/gallery/community-food-service.jpg', cls: 'tall' },
+        { src: 'assets/images/gallery/molina-healthcare-booth.jpg', cls: '' },
+        { src: 'assets/images/gallery/healing-circle-heart-hands.jpg', cls: '' },
+        { src: 'assets/images/gallery/skin-health-booth.jpg', cls: 'wide' },
+        { src: 'assets/images/gallery/volunteers-hug-bounce-house.jpg', cls: '' },
+        { src: 'assets/images/gallery/spinning-wheel-booth.jpg', cls: '' },
+        { src: 'assets/images/gallery/team-health-fair-bw.jpg', cls: 'wide' },
+        { src: 'assets/images/gallery/gut-healing-circle.jpg', cls: '' }
+      ];
+
+      const gallery = document.getElementById('prevEventsGallery');
+      if (!gallery) return;
+
+      gallery.innerHTML = photos.map(p => `
+        <div class="gallery-photo ${p.cls} scale-in">
+          <img src="${p.src}" alt="2024 Health Fair" loading="lazy" />
+        </div>
+      `).join('');
+
+      gallery.querySelectorAll('.scale-in').forEach(el => observer.observe(el));
+    }
+    loadPrevEventsGallery();
   </script>
 </body>
 </html>

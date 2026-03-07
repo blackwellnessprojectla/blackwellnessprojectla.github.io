@@ -11,7 +11,8 @@
     "description": "As we prepare for our upcoming Black Health Fair this summer, we want to make sure it reflects your needs, concerns, and priorities. Join us to share what health issues impact you and your family, tell us what resources you wish were more accessible, and help shape the services offered at the Health Fair.",
     "type": "free",
     "featured": false,
-    "rsvpLink": "https://blackwellnessprojectla.org/events.html"
+    "rsvpLink": "https://docs.google.com/forms/d/e/1FAIpQLSeRgzGnRLLau2akQZgBL7HddDoUN4-9tc-8YorEGiBPJ9MLXQ/viewform",
+    "flyerImage": "assets/images/flyers/community-listening-session-2026.jpg"
   },
   {
     "id": 2,
@@ -25,7 +26,7 @@
     "description": "Interactive workshops on health topics chosen by community members — because education is most powerful when it starts with the questions you actually have.",
     "type": "free",
     "featured": false,
-    "rsvpLink": "mailto:blackwellnessprojectla@gmail.com?subject=RSVP: Health Education Workshop"
+    "rsvpLink": "https://docs.google.com/forms/d/1qUafFdy-SZBD9_NSrLXvpc142dAL5HFxEYP9lzKkMGI/viewform"
   },
   {
     "id": 3,
@@ -39,6 +40,6 @@
     "description": "Our flagship event returns. Free health screenings, wellness activities, resource navigation, and community celebration — all grounded in our Mind, Body & Soul framework.",
     "type": "flagship",
     "featured": true,
-    "rsvpLink": "mailto:blackwellnessprojectla@gmail.com?subject=RSVP: Annual Health Fair 2026"
+    "rsvpLink": "PLACEHOLDER_HEALTH_FAIR_FORM_URL"
   }
 ]

@@ -1306,6 +1306,8 @@ button { cursor: pointer; border: none; background: none; }
   border-radius: var(--radius);
   border: 1px solid rgba(0,0,0,0.05);
   transition: all var(--transition);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .contact-way:hover {
   transform: translateY(-4px);
